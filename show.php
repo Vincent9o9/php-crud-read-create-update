@@ -2,9 +2,8 @@
 include __DIR__ .'/partials/templates/header.php';
 include __DIR__ .'/partials/show/server.php';
 ?>
-<body>
     <div class="container">
-        <a href="index.php">Torna indietro</a>
+        <h1>Dettagli della stanza</h1>
         <ul class="list-group">
             <li class="list-group-item">ID: <?php echo $row['id']; ?></li>
             <li class="list-group-item"> Numero della stanza: <?php echo $row['room_number']; ?></li>
@@ -12,5 +11,6 @@ include __DIR__ .'/partials/show/server.php';
             <li class="list-group-item">Numero di letti: <?php echo $row['beds']; ?></li>
         </ul>
     </div>
-</body>
-</html>
+<?php
+include __DIR__ .'/partials/templates/footer.php';
+?>
