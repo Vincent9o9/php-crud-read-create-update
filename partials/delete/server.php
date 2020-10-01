@@ -1,17 +1,9 @@
 <?php
 include __DIR__ .'/../database.php';
+include __DIR__ .'/../functions.php';
 if (empty($_POST['id'])) {
     die('Nessun id');
 }
-$sql = "DELETE FROM stanze WHERE id = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("i",$id);
 $id = $_POST['id'];
-$stmt->execute();
-if($stmt && $stmt->affected_rows > 0) {
-    header("Location: $basepath/index.php?roomId=$id");
-} else {
-    echo "Non ho cancellato";
-}
-$conn->close();
+removeId($conn, 'stanze', $id, $basepath)
 ?>
